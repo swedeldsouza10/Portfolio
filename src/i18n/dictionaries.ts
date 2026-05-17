@@ -1,0 +1,533 @@
+import type { Lang } from "./config";
+
+/**
+ * All user-facing UI strings. Proper nouns (Swedel Dsouza, company /
+ * institution names, technology names) are intentionally left in English.
+ * Page/section content data (projects, experience, education) lives in
+ * ./data.ts.
+ */
+export const dictionaries: Record<Lang, Record<string, unknown>> = {
+  en: {
+    nav: {
+      home: "Home",
+      about: "About",
+      projects: "Projects",
+      contact: "Contact",
+      letsTalk: "Let's talk",
+      changeLanguage: "Change language",
+      toggleTheme: "Toggle theme",
+      toggleMenu: "Toggle menu",
+    },
+    common: {
+      getInTouch: "Get in Touch",
+      moreAboutMe: "More about me",
+      viewProjects: "View Projects",
+      viewAllProjects: "View all projects",
+      backToHome: "Back to Home",
+      and: "and",
+    },
+    hero: {
+      greeting: "Hi, I'm",
+      buildWith: "I build scalable web applications with",
+      taglinePost:
+        ". I transform complex problems into elegant, high-performance products — driven by clean architecture and experiences people genuinely enjoy using.",
+      role1: "Full Stack Developer",
+      role2: "React / Angular Engineer",
+      role3: "Node.js Backend Dev",
+      role4: "UI / UX Enthusiast",
+    },
+    aboutPreview: {
+      kicker: "About Me",
+      titleA: "Turning ideas into",
+      titleB: "refined products",
+      p1: "I'm a Full Stack Developer at Mograsys Technology, building responsive web applications with Angular, React and Node.js. I care deeply about clean architecture, performance and the small details that make an interface feel effortless.",
+      p2: "A Computer Science & Business Systems graduate (CGPA 9.13, 9th State Rank under VTU), I enjoy translating complex problems into simple, elegant solutions.",
+    },
+    about: {
+      kicker: "About Me",
+      titleA: "Building thoughtful",
+      titleB: "digital experiences",
+      intro:
+        "I'm Swedel Dsouza — a Full Stack Developer who loves transforming complex requirements into clean, scalable and delightful products. With strong fundamentals in computer science and a track record of academic excellence, I bring both engineering rigor and design sensibility to every project.",
+      careerKicker: "Career",
+      careerTitleA: "Work",
+      careerTitleB: "Experience",
+      eduKicker: "Academics",
+      eduTitleA: "Education",
+      eduTitleB: "& Achievements",
+    },
+    skills: {
+      kicker: "Technical Stack",
+      titleA: "Skills &",
+      titleB: "Technologies",
+      subtitle:
+        "The tools and technologies I reach for to ship reliable, polished products.",
+      frontend: "Frontend",
+      backend: "Backend",
+      tools: "Tools",
+      language: "Languages",
+    },
+    featured: {
+      kicker: "Recent Work",
+      titleA: "Featured",
+      titleB: "Projects",
+      subtitle:
+        "A few things I've built recently — spanning full stack platforms and mobile apps.",
+    },
+    projects: {
+      kicker: "Portfolio",
+      titleA: "Things I've",
+      titleB: "Built",
+      subtitle:
+        "From end-to-end school management platforms to ML-powered mobile apps — here's a selection of my work.",
+      featured: "Featured",
+      filterAll: "All",
+      filterFullstack: "Full Stack",
+      filterMobile: "Mobile",
+      catFullstack: "Full Stack",
+      catMobile: "Mobile",
+      catFrontend: "Frontend",
+      catBackend: "Backend",
+      empty: "No projects in this category yet.",
+    },
+    cta: {
+      titleA: "Let's build something",
+      titleB: "exceptional",
+      titleC: "together",
+      text: "Have a project in mind or just want to say hi? My inbox is always open — I'll get back to you as soon as I can.",
+    },
+    contact: {
+      kicker: "Get in Touch",
+      titleA: "Let's",
+      titleB: "Connect",
+      subtitle:
+        "Whether you have a project, an opportunity, or just want to chat about tech — I'd love to hear from you.",
+      email: "Email",
+      linkedin: "LinkedIn",
+      github: "GitHub",
+      location: "Location",
+      locationValue: "Goa, India",
+      form: {
+        name: "Name",
+        email: "Email",
+        message: "Message",
+        namePlaceholder: "Jane Doe",
+        emailPlaceholder: "jane@example.com",
+        messagePlaceholder: "Tell me about your project or just say hi…",
+        send: "Send Message",
+        sending: "Sending…",
+        success: "Thanks! Your message has been received — I'll reply soon.",
+        error: "Something went wrong. Please try again.",
+        timeout:
+          "This is taking too long. Please try again, or email me directly.",
+      },
+    },
+    footer: {
+      tagline:
+        "Full Stack Developer crafting scalable, performant and beautifully designed web applications.",
+      navigate: "Navigate",
+      connect: "Connect",
+      rights: "All rights reserved.",
+      builtWith: "Built with Next.js & Tailwind CSS",
+    },
+    notFound: {
+      code: "Error 404",
+      title: "Lost?",
+      text: "The page you're looking for doesn't exist or has been moved. Let's get you back on track.",
+    },
+  },
+
+  hi: {
+    nav: {
+      home: "होम",
+      about: "परिचय",
+      projects: "प्रोजेक्ट्स",
+      contact: "संपर्क",
+      letsTalk: "बात करें",
+      changeLanguage: "भाषा बदलें",
+      toggleTheme: "थीम बदलें",
+      toggleMenu: "मेन्यू टॉगल करें",
+    },
+    common: {
+      getInTouch: "संपर्क करें",
+      moreAboutMe: "मेरे बारे में और जानें",
+      viewProjects: "प्रोजेक्ट्स देखें",
+      viewAllProjects: "सभी प्रोजेक्ट्स देखें",
+      backToHome: "होम पर वापस जाएँ",
+      and: "और",
+    },
+    hero: {
+      greeting: "नमस्ते, मैं हूँ",
+      buildWith: "मैं स्केलेबल वेब एप्लिकेशन बनाता हूँ —",
+      taglinePost:
+        " के साथ। मैं जटिल समस्याओं को सुंदर, उच्च-प्रदर्शन वाले उत्पादों में बदलता हूँ — स्वच्छ आर्किटेक्चर और ऐसे अनुभवों से प्रेरित जिन्हें लोग सचमुच पसंद करते हैं।",
+      role1: "फुल स्टैक डेवलपर",
+      role2: "React / Angular इंजीनियर",
+      role3: "Node.js बैकएंड डेवलपर",
+      role4: "UI / UX उत्साही",
+    },
+    aboutPreview: {
+      kicker: "मेरे बारे में",
+      titleA: "विचारों को बदलना",
+      titleB: "परिष्कृत उत्पादों में",
+      p1: "मैं Mograsys Technology में एक फुल स्टैक डेवलपर हूँ, जो Angular, React और Node.js के साथ रिस्पॉन्सिव वेब एप्लिकेशन बनाता हूँ। मैं स्वच्छ आर्किटेक्चर, प्रदर्शन और उन छोटे विवरणों की गहराई से परवाह करता हूँ जो किसी इंटरफ़ेस को सहज बनाते हैं।",
+      p2: "कंप्यूटर साइंस एंड बिज़नेस सिस्टम्स स्नातक (CGPA 9.13, VTU में 9वीं राज्य रैंक), मुझे जटिल समस्याओं को सरल, सुंदर समाधानों में बदलना पसंद है।",
+    },
+    about: {
+      kicker: "मेरे बारे में",
+      titleA: "विचारशील",
+      titleB: "डिजिटल अनुभव",
+      intro:
+        "मैं स्वेडेल डिसूज़ा हूँ — एक फुल स्टैक डेवलपर जिसे जटिल आवश्यकताओं को स्वच्छ, स्केलेबल और आनंददायक उत्पादों में बदलना पसंद है। कंप्यूटर साइंस की मजबूत बुनियाद और शैक्षणिक उत्कृष्टता के रिकॉर्ड के साथ, मैं हर प्रोजेक्ट में इंजीनियरिंग की कठोरता और डिज़ाइन की समझ दोनों लाता हूँ।",
+      careerKicker: "करियर",
+      careerTitleA: "कार्य",
+      careerTitleB: "अनुभव",
+      eduKicker: "शिक्षा",
+      eduTitleA: "शिक्षा",
+      eduTitleB: "और उपलब्धियाँ",
+    },
+    skills: {
+      kicker: "तकनीकी स्टैक",
+      titleA: "कौशल और",
+      titleB: "तकनीकें",
+      subtitle:
+        "विश्वसनीय, परिष्कृत उत्पाद बनाने के लिए मैं जिन उपकरणों और तकनीकों का उपयोग करता हूँ।",
+      frontend: "फ्रंटएंड",
+      backend: "बैकएंड",
+      tools: "उपकरण",
+      language: "भाषाएँ",
+    },
+    featured: {
+      kicker: "हालिया कार्य",
+      titleA: "विशेष",
+      titleB: "प्रोजेक्ट्स",
+      subtitle:
+        "हाल ही में बनाई गई कुछ चीज़ें — फुल स्टैक प्लेटफ़ॉर्म और मोबाइल ऐप्स।",
+    },
+    projects: {
+      kicker: "पोर्टफोलियो",
+      titleA: "मैंने जो",
+      titleB: "बनाया",
+      subtitle:
+        "एंड-टू-एंड स्कूल प्रबंधन प्लेटफ़ॉर्म से लेकर ML-संचालित मोबाइल ऐप्स तक — यहाँ मेरे कार्य का चयन है।",
+      featured: "विशेष",
+      filterAll: "सभी",
+      filterFullstack: "फुल स्टैक",
+      filterMobile: "मोबाइल",
+      catFullstack: "फुल स्टैक",
+      catMobile: "मोबाइल",
+      catFrontend: "फ्रंटएंड",
+      catBackend: "बैकएंड",
+      empty: "इस श्रेणी में अभी कोई प्रोजेक्ट नहीं है।",
+    },
+    cta: {
+      titleA: "आइए कुछ",
+      titleB: "असाधारण",
+      titleC: "साथ मिलकर बनाएँ",
+      text: "कोई प्रोजेक्ट है या बस नमस्ते कहना चाहते हैं? मेरा इनबॉक्स हमेशा खुला है — मैं जल्द से जल्द जवाब दूँगा।",
+    },
+    contact: {
+      kicker: "संपर्क करें",
+      titleA: "आइए",
+      titleB: "जुड़ें",
+      subtitle:
+        "चाहे आपके पास कोई प्रोजेक्ट हो, अवसर हो, या बस तकनीक पर बात करना चाहते हों — मुझे आपसे सुनना अच्छा लगेगा।",
+      email: "ईमेल",
+      linkedin: "लिंक्डइन",
+      github: "गिटहब",
+      location: "स्थान",
+      locationValue: "गोवा, भारत",
+      form: {
+        name: "नाम",
+        email: "ईमेल",
+        message: "संदेश",
+        namePlaceholder: "जेन डो",
+        emailPlaceholder: "jane@example.com",
+        messagePlaceholder:
+          "अपने प्रोजेक्ट के बारे में बताएं या बस नमस्ते कहें…",
+        send: "संदेश भेजें",
+        sending: "भेजा जा रहा है…",
+        success: "धन्यवाद! आपका संदेश मिल गया है — मैं जल्द ही जवाब दूँगा।",
+        error: "कुछ गलत हो गया। कृपया पुनः प्रयास करें।",
+        timeout:
+          "इसमें बहुत समय लग रहा है। कृपया पुनः प्रयास करें, या मुझे सीधे ईमेल करें।",
+      },
+    },
+    footer: {
+      tagline:
+        "फुल स्टैक डेवलपर जो स्केलेबल, उच्च-प्रदर्शन और सुंदर डिज़ाइन वाले वेब एप्लिकेशन बनाता है।",
+      navigate: "नेविगेट",
+      connect: "जुड़ें",
+      rights: "सर्वाधिकार सुरक्षित।",
+      builtWith: "Next.js और Tailwind CSS के साथ बनाया गया",
+    },
+    notFound: {
+      code: "त्रुटि 404",
+      title: "खो गए?",
+      text: "आप जिस पृष्ठ को खोज रहे हैं वह मौजूद नहीं है या स्थानांतरित कर दिया गया है। आइए आपको वापस सही रास्ते पर लाएँ।",
+    },
+  },
+
+  fr: {
+    nav: {
+      home: "Accueil",
+      about: "À propos",
+      projects: "Projets",
+      contact: "Contact",
+      letsTalk: "Discutons",
+      changeLanguage: "Changer de langue",
+      toggleTheme: "Changer le thème",
+      toggleMenu: "Basculer le menu",
+    },
+    common: {
+      getInTouch: "Me contacter",
+      moreAboutMe: "En savoir plus sur moi",
+      viewProjects: "Voir les projets",
+      viewAllProjects: "Voir tous les projets",
+      backToHome: "Retour à l'accueil",
+      and: "et",
+    },
+    hero: {
+      greeting: "Bonjour, je suis",
+      buildWith: "Je crée des applications web évolutives avec",
+      taglinePost:
+        ". Je transforme des problèmes complexes en produits élégants et performants — guidé par une architecture propre et des expériences que les gens aiment vraiment utiliser.",
+      role1: "Développeur Full Stack",
+      role2: "Ingénieur React / Angular",
+      role3: "Développeur Backend Node.js",
+      role4: "Passionné d'UI / UX",
+    },
+    aboutPreview: {
+      kicker: "À propos de moi",
+      titleA: "Transformer les idées en",
+      titleB: "produits raffinés",
+      p1: "Je suis développeur Full Stack chez Mograsys Technology, créant des applications web réactives avec Angular, React et Node.js. J'accorde une grande importance à une architecture propre, aux performances et aux petits détails qui rendent une interface fluide.",
+      p2: "Diplômé en informatique et systèmes d'entreprise (CGPA 9,13, 9e rang d'État sous VTU), j'aime traduire des problèmes complexes en solutions simples et élégantes.",
+    },
+    about: {
+      kicker: "À propos de moi",
+      titleA: "Concevoir des expériences",
+      titleB: "numériques réfléchies",
+      intro:
+        "Je suis Swedel Dsouza — un développeur Full Stack qui adore transformer des exigences complexes en produits propres, évolutifs et agréables. Avec de solides bases en informatique et un parcours d'excellence académique, j'apporte à la fois rigueur d'ingénierie et sensibilité au design à chaque projet.",
+      careerKicker: "Carrière",
+      careerTitleA: "Expérience",
+      careerTitleB: "professionnelle",
+      eduKicker: "Études",
+      eduTitleA: "Formation",
+      eduTitleB: "& Distinctions",
+    },
+    skills: {
+      kicker: "Stack technique",
+      titleA: "Compétences &",
+      titleB: "Technologies",
+      subtitle:
+        "Les outils et technologies que j'utilise pour livrer des produits fiables et soignés.",
+      frontend: "Frontend",
+      backend: "Backend",
+      tools: "Outils",
+      language: "Langages",
+    },
+    featured: {
+      kicker: "Travaux récents",
+      titleA: "Projets",
+      titleB: "à la une",
+      subtitle:
+        "Quelques réalisations récentes — des plateformes full stack aux applications mobiles.",
+    },
+    projects: {
+      kicker: "Portfolio",
+      titleA: "Ce que j'ai",
+      titleB: "construit",
+      subtitle:
+        "Des plateformes de gestion scolaire de bout en bout aux applications mobiles propulsées par le ML — voici une sélection de mes travaux.",
+      featured: "À la une",
+      filterAll: "Tous",
+      filterFullstack: "Full Stack",
+      filterMobile: "Mobile",
+      catFullstack: "Full Stack",
+      catMobile: "Mobile",
+      catFrontend: "Frontend",
+      catBackend: "Backend",
+      empty: "Aucun projet dans cette catégorie pour l'instant.",
+    },
+    cta: {
+      titleA: "Créons quelque chose",
+      titleB: "d'exceptionnel",
+      titleC: "ensemble",
+      text: "Vous avez un projet en tête ou souhaitez simplement dire bonjour ? Ma boîte de réception est toujours ouverte — je vous répondrai dès que possible.",
+    },
+    contact: {
+      kicker: "Me contacter",
+      titleA: "Restons",
+      titleB: "en contact",
+      subtitle:
+        "Que vous ayez un projet, une opportunité, ou que vous souhaitiez simplement parler tech — j'aimerais beaucoup vous lire.",
+      email: "E-mail",
+      linkedin: "LinkedIn",
+      github: "GitHub",
+      location: "Lieu",
+      locationValue: "Goa, Inde",
+      form: {
+        name: "Nom",
+        email: "E-mail",
+        message: "Message",
+        namePlaceholder: "Jean Dupont",
+        emailPlaceholder: "jean@exemple.com",
+        messagePlaceholder:
+          "Parlez-moi de votre projet ou dites simplement bonjour…",
+        send: "Envoyer le message",
+        sending: "Envoi…",
+        success: "Merci ! Votre message a bien été reçu — je répondrai bientôt.",
+        error: "Une erreur s'est produite. Veuillez réessayer.",
+        timeout:
+          "Cela prend trop de temps. Veuillez réessayer ou m'écrire directement.",
+      },
+    },
+    footer: {
+      tagline:
+        "Développeur Full Stack concevant des applications web évolutives, performantes et élégamment conçues.",
+      navigate: "Navigation",
+      connect: "Réseaux",
+      rights: "Tous droits réservés.",
+      builtWith: "Conçu avec Next.js & Tailwind CSS",
+    },
+    notFound: {
+      code: "Erreur 404",
+      title: "Perdu ?",
+      text: "La page que vous recherchez n'existe pas ou a été déplacée. Remettons-vous sur la bonne voie.",
+    },
+  },
+
+  de: {
+    nav: {
+      home: "Start",
+      about: "Über mich",
+      projects: "Projekte",
+      contact: "Kontakt",
+      letsTalk: "Sprechen wir",
+      changeLanguage: "Sprache ändern",
+      toggleTheme: "Thema wechseln",
+      toggleMenu: "Menü umschalten",
+    },
+    common: {
+      getInTouch: "Kontakt aufnehmen",
+      moreAboutMe: "Mehr über mich",
+      viewProjects: "Projekte ansehen",
+      viewAllProjects: "Alle Projekte ansehen",
+      backToHome: "Zurück zur Startseite",
+      and: "und",
+    },
+    hero: {
+      greeting: "Hallo, ich bin",
+      buildWith: "Ich entwickle skalierbare Webanwendungen mit",
+      taglinePost:
+        ". Ich verwandle komplexe Probleme in elegante, leistungsstarke Produkte — angetrieben von sauberer Architektur und Erlebnissen, die Menschen wirklich gerne nutzen.",
+      role1: "Full-Stack-Entwickler",
+      role2: "React / Angular Ingenieur",
+      role3: "Node.js Backend-Entwickler",
+      role4: "UI / UX Enthusiast",
+    },
+    aboutPreview: {
+      kicker: "Über mich",
+      titleA: "Ideen verwandeln in",
+      titleB: "ausgefeilte Produkte",
+      p1: "Ich bin Full-Stack-Entwickler bei Mograsys Technology und entwickle responsive Webanwendungen mit Angular, React und Node.js. Mir liegen saubere Architektur, Performance und die kleinen Details, die eine Oberfläche mühelos wirken lassen, sehr am Herzen.",
+      p2: "Als Absolvent in Informatik & Business Systems (Notendurchschnitt 9,13, 9. Landesrang an der VTU) übersetze ich komplexe Probleme gerne in einfache, elegante Lösungen.",
+    },
+    about: {
+      kicker: "Über mich",
+      titleA: "Durchdachte digitale",
+      titleB: "Erlebnisse schaffen",
+      intro:
+        "Ich bin Swedel Dsouza — ein Full-Stack-Entwickler, der es liebt, komplexe Anforderungen in saubere, skalierbare und ansprechende Produkte zu verwandeln. Mit soliden Grundlagen in der Informatik und einer Bilanz akademischer Exzellenz bringe ich sowohl ingenieurtechnische Sorgfalt als auch Designgespür in jedes Projekt ein.",
+      careerKicker: "Werdegang",
+      careerTitleA: "Berufs-",
+      careerTitleB: "erfahrung",
+      eduKicker: "Akademisches",
+      eduTitleA: "Ausbildung",
+      eduTitleB: "& Auszeichnungen",
+    },
+    skills: {
+      kicker: "Tech-Stack",
+      titleA: "Fähigkeiten &",
+      titleB: "Technologien",
+      subtitle:
+        "Die Werkzeuge und Technologien, mit denen ich zuverlässige, ausgefeilte Produkte liefere.",
+      frontend: "Frontend",
+      backend: "Backend",
+      tools: "Werkzeuge",
+      language: "Sprachen",
+    },
+    featured: {
+      kicker: "Aktuelle Arbeiten",
+      titleA: "Ausgewählte",
+      titleB: "Projekte",
+      subtitle:
+        "Einige meiner aktuellen Arbeiten — von Full-Stack-Plattformen bis zu mobilen Apps.",
+    },
+    projects: {
+      kicker: "Portfolio",
+      titleA: "Was ich",
+      titleB: "gebaut habe",
+      subtitle:
+        "Von durchgängigen Schulverwaltungsplattformen bis zu ML-gestützten mobilen Apps — hier eine Auswahl meiner Arbeit.",
+      featured: "Hervorgehoben",
+      filterAll: "Alle",
+      filterFullstack: "Full Stack",
+      filterMobile: "Mobil",
+      catFullstack: "Full Stack",
+      catMobile: "Mobil",
+      catFrontend: "Frontend",
+      catBackend: "Backend",
+      empty: "Noch keine Projekte in dieser Kategorie.",
+    },
+    cta: {
+      titleA: "Lassen Sie uns etwas",
+      titleB: "Außergewöhnliches",
+      titleC: "gemeinsam schaffen",
+      text: "Haben Sie ein Projekt im Kopf oder möchten einfach Hallo sagen? Mein Postfach ist immer offen — ich melde mich so schnell wie möglich.",
+    },
+    contact: {
+      kicker: "Kontakt aufnehmen",
+      titleA: "Lassen Sie uns",
+      titleB: "vernetzen",
+      subtitle:
+        "Ob Sie ein Projekt, eine Gelegenheit haben oder einfach über Technik plaudern möchten — ich freue mich, von Ihnen zu hören.",
+      email: "E-Mail",
+      linkedin: "LinkedIn",
+      github: "GitHub",
+      location: "Standort",
+      locationValue: "Goa, Indien",
+      form: {
+        name: "Name",
+        email: "E-Mail",
+        message: "Nachricht",
+        namePlaceholder: "Max Mustermann",
+        emailPlaceholder: "max@beispiel.de",
+        messagePlaceholder:
+          "Erzählen Sie mir von Ihrem Projekt oder sagen Sie einfach Hallo…",
+        send: "Nachricht senden",
+        sending: "Senden…",
+        success:
+          "Danke! Ihre Nachricht ist eingegangen — ich antworte bald.",
+        error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+        timeout:
+          "Das dauert zu lange. Bitte versuchen Sie es erneut oder schreiben Sie mir direkt.",
+      },
+    },
+    footer: {
+      tagline:
+        "Full-Stack-Entwickler, der skalierbare, performante und schön gestaltete Webanwendungen erstellt.",
+      navigate: "Navigation",
+      connect: "Vernetzen",
+      rights: "Alle Rechte vorbehalten.",
+      builtWith: "Erstellt mit Next.js & Tailwind CSS",
+    },
+    notFound: {
+      code: "Fehler 404",
+      title: "Verirrt?",
+      text: "Die gesuchte Seite existiert nicht oder wurde verschoben. Bringen wir Sie zurück auf den richtigen Weg.",
+    },
+  },
+};

@@ -1,0 +1,6 @@
+.env.local
+.env.local.example
+devserver.err.log
+devserver.log
+node_modules
+.next
