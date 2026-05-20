@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { connectDB, isDbConfigured } from "@/lib/mongodb";
+// import { connectDB, isDbConfigured } from "@/lib/mongodb";
 
 interface Submission {
   name: string;
@@ -17,19 +17,19 @@ interface Submission {
 function deliver({ name, email, message }: Submission) {
   const tasks: Promise<unknown>[] = [];
 
-  if (isDbConfigured()) {
-    tasks.push(
-      (async () => {
-        await connectDB();
-        const { Contact } = await import("@/models/Contact");
-        await Contact.create({ name, email, message });
-      })().catch((dbErr) => console.error("DB save failed:", dbErr))
-    );
-  } else {
-    console.warn(
-      "MONGODB_URI not set — contact message accepted but not stored."
-    );
-  }
+  // if (isDbConfigured()) {
+  //   tasks.push(
+  //     (async () => {
+  //       await connectDB();
+  //       const { Contact } = await import("@/models/Contact");
+  //       await Contact.create({ name, email, message });
+  //     })().catch((dbErr) => console.error("DB save failed:", dbErr))
+  //   );
+  // } else {
+  //   console.warn(
+  //     "MONGODB_URI not set — contact message accepted but not stored."
+  //   );
+  // }
 
   if (process.env.SMTP_HOST) {
     tasks.push(
