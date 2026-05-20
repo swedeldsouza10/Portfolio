@@ -1,20 +1,19 @@
 import nodemailer from "nodemailer";
 
+const port = Number(process.env.SMTP_PORT) || 587;
+
 export const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT) || 587,
-  secure: false,
+  port,
+  secure: port === 465,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
-  // Reuse a warm connection so repeat sends are fast…
-  pool: true,
-  maxConnections: 3,
-  // …and never let a stalled SMTP server hang the request forever.
-  connectionTimeout: 8000,
-  greetingTimeout: 8000,
-  socketTimeout: 12000,
+  // Keep total worst-case under Vercel's 15s function budget.
+  connectionTimeout: 5000,
+  greetingTimeout: 5000,
+  socketTimeout: 8000,
 });
 
 export interface MailOptions {

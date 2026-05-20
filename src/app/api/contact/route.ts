@@ -1,20 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
 // import { connectDB, isDbConfigured } from "@/lib/mongodb";
 
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+export const maxDuration = 15;
+
 interface Submission {
   name: string;
   email: string;
   message: string;
 }
 
-/**
- * Persist + email in the background. Runs after the HTTP response has
- * already been returned, so the visitor never waits on slow SMTP.
- * Safe here because this is a long-lived Node server (not serverless):
- * unawaited promises keep running on the event loop. Errors are logged,
- * never thrown, so they can't crash the process.
- */
-function deliver({ name, email, message }: Submission) {
+// Must be awaited on serverless (Vercel): the function instance is
+// killed the moment we return, so any unawaited promise is dropped
+// before SMTP completes.
+async function deliver({ name, email, message }: Submission) {
   const tasks: Promise<unknown>[] = [];
 
   // if (isDbConfigured()) {
@@ -24,10 +24,6 @@ function deliver({ name, email, message }: Submission) {
   //       const { Contact } = await import("@/models/Contact");
   //       await Contact.create({ name, email, message });
   //     })().catch((dbErr) => console.error("DB save failed:", dbErr))
-  //   );
-  // } else {
-  //   console.warn(
-  //     "MONGODB_URI not set — contact message accepted but not stored."
   //   );
   // }
 
@@ -40,7 +36,7 @@ function deliver({ name, email, message }: Submission) {
     );
   }
 
-  return Promise.allSettled(tasks);
+  await Promise.allSettled(tasks);
 }
 
 export async function POST(req: NextRequest) {
@@ -70,10 +66,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Kick off persistence + email WITHOUT awaiting, then respond
-    // immediately. The visitor gets instant feedback; SMTP finishes in
-    // the background.
-    void deliver({ name, email, message });
+    await deliver({ name, email, message });
 
     return NextResponse.json(
       {
